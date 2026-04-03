@@ -35,20 +35,14 @@ contract Owner {
         emit OwnerSet(address(0), owner);
     }
 
-    /**
-     * @dev Change owner
-     * @param newOwner address of new owner
-     */
+
     function changeOwner(address newOwner) public isOwner {
         require(newOwner != address(0), "New owner should not be the zero address");
         emit OwnerSet(owner, newOwner);
         owner = newOwner;
     }
 
-    /**
-     * @dev Return owner address 
-     * @return address of owner
-     */
+
     function getOwner() external view returns (address) {
         return owner;
     }
