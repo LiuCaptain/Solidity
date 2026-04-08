@@ -3,8 +3,8 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract BaseType {
-    // 测试整数
-    function testInteger () public pure  returns (uint) {
+    // 整数类型
+    function testInteger () public pure returns (uint) {
         uint8 i8 = 200;
         i8 ++;
 
@@ -18,7 +18,7 @@ contract BaseType {
         return max;
     }
 
-    // 测试枚举
+    // 枚举类型
     enum OrderState  {
         layorder,
         payment,
