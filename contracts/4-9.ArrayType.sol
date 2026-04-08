@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-contract ArraryType {
+contract ArrayType {
     uint8[5] sdata;
 
     uint8[] ddata;
