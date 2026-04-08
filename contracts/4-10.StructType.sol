@@ -38,7 +38,7 @@ contract StructType {
         return p;
     }
     // Struct 类型 - Storage 写入
-    function testWriteStorage () public  returns (Person memory) {
+    function testWriteStorage () public returns (Person memory) {
         Person storage p = master; // 局部的 Struct 类型的 storage 变量需要初始化
         p.name = "TieZhu";
         p.age = 20;
