@@ -32,7 +32,7 @@ contract StructType {
 
     // Struct 类型 - Memory 写入
     function testWriteMemory () public pure returns (Person memory) {
-        Person memory p;
+        Person memory p; // 不需要初始化
         p.name = "DaNiu";
         p.age = 18;
         return p;
