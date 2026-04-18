@@ -19,6 +19,6 @@ contract Caller {
 
     function setCalleeA (uint256 c) public {
         Callee collee = Callee(calleeAddress);
-        collee.setA(c);
+        collee.setA(c); // 在同一个文件中调用其他合约
     }
 }
