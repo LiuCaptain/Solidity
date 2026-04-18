@@ -1,24 +1,17 @@
 // SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.7.0 <0.9.0;
-
-contract Callee {
-    uint256 public a;
-
-    function setA (uint256 b) public {
-        a = b;
-    }
-}
+import "./5-3.Callee.sol";
 
 contract Caller {
     address calleeAddress;
-    
+
     constructor (address addr) {
         calleeAddress = addr;
     }
 
     function setCalleeA (uint256 c) public {
-        Callee collee = Callee(calleeAddress);
-        collee.setA(c);
+        Callee callee =  Callee(calleeAddress);
+        callee.setA(c);
     }
 }

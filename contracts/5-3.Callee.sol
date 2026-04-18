@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.7.0 <0.9.0;
+
+contract Callee {
+    uint256 public a;
+    
+    function setA (uint256 b) public {
+        a = b;
+    }
+}
