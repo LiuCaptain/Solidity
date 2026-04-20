@@ -3,7 +3,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 interface INotIsCallee {
-    function setA (uint256 b) external;
+    function setA (uint256 b) external; // 涉及到成员变量修改
 }
 
 contract NotIsCaller {
