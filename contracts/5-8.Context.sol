@@ -6,11 +6,13 @@ contract Callee {
     uint256 public x;
     address public caller;
     address public eoaAddress;
+    uint256 public blockTimestamp;
 
     function setX (uint256 y) public  {
         x = y;
         caller = msg.sender;
         eoaAddress = tx.origin;
+        blockTimestamp = block.timestamp;
     }
 }
 
@@ -18,6 +20,7 @@ contract Caller {
     address calleeAddress;
     address public caller;
     address public eoaAddress;
+    uint256 public blockTimestamp;
 
     constructor (address addr) {
         calleeAddress = addr;
@@ -28,5 +31,6 @@ contract Caller {
         callee.setX(a);
         caller = msg.sender;
         eoaAddress = tx.origin;
+        blockTimestamp = block.timestamp;
     }
 }
