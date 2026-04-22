@@ -11,7 +11,7 @@ contract External {
         this.second();
     }
 
-    function second () external{
+    function second () external {
         secondCaller = msg.sender; // 当前合约地址
     }
 }
