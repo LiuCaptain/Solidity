@@ -12,7 +12,7 @@ contract Coller {
 
     event BytesLog (bytes data);
 
-    function setColleeX (uint256 b, uint256 c) public returns (uint256 d) {
+    function setColleeX (uint256 b, uint256 c) public {
         bytes memory data = abi.encodeWithSignature("setY(uint256,uint256)", b, c);
         (bool status, bytes memory result) = colleeAddress.call(data);
         emit BytesLog(result);
