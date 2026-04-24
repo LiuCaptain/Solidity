@@ -19,23 +19,20 @@ contract GasCollerOne {
         gasCollee = _gasCollee;
     }
     function callGasColleeForver () public { // 实际消耗 26380
-        gasCollee.forever{gas: 50000}();
+        gasCollee.forever{gas: 5 * 10000}();
     }
 }
 
 // 动态调用
 contract GasColleeTwo {
     address gasColleeAddress;
-
     constructor (address addr) {
         gasColleeAddress = addr;
     }
-
     event DataLog (string message);
-
     function callGasColleeForver () public {
         bytes memory data = abi.encodeWithSignature("forever()");
-        (bool status,) = gasColleeAddress.call{gas: 5 * 1000}(data);
+        (bool status,) = gasColleeAddress.call{gas: 5 * 10000}(data);
         if (status) {
             emit DataLog("Call Success!");
         } else {
