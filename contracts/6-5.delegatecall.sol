@@ -19,10 +19,6 @@ contract Caller {
     address public sender;
     uint256 public value;
 
-    // constructor (address addr) {
-
-    // }
-
     function setVars (address addr, uint _num) public payable {
         bytes memory data = abi.encodeWithSignature("setVar(uint256)", _num);
         (bool status,) = addr.delegatecall(data);
