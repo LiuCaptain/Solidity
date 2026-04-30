@@ -23,5 +23,5 @@ contract Caller {
         bytes memory data = abi.encodeWithSignature("setVar(uint256)", _num);
         (bool status,) = addr.delegatecall(data);
         require(status, "Call failed!");
-    } 
+    }
 }
