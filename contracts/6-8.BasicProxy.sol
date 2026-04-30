@@ -6,7 +6,7 @@ contract LogicV1 {
     uint256 public placeholder;
     uint256 public count;
 
-    function serVar () external {
+    function setVar () external {
         count += 1;
     }
 }
@@ -34,7 +34,7 @@ contract BasicProxy {
     }
 
     fallback () external {
-        (bool status,) =  logic.delegatecall(msg.data);
+        (bool status,) = logic.delegatecall(msg.data);
         require(status, "Call Failed!");
     }
 }
