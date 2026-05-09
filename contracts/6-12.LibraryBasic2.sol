@@ -22,7 +22,11 @@ library TransferOperation {
 }
 
 contract BalanceManager {
-    mapping(address => uint256) balanceOf;
+    mapping(address => uint256) public balanceOf;
+
+    constructor (uint256 amount) {
+        balanceOf[msg.sender] = amount;
+    }
 
     function transfer (address to, uint256 amount) external {
         TransferOperation.transfer(msg.sender, to, amount, balanceOf);
