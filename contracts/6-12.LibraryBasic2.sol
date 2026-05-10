@@ -10,8 +10,8 @@ library TransferOperation {
         mapping(address => uint256) storage balanceOf
     ) public {
         uint256 fb = balanceOf[from];
-        require(fb  < amount, "Insufficient Balance!");
         uint256 tb = balanceOf[to];
+        require(amount <= fb, "Insufficient Balance!");
 
         fb -= amount;
         tb += amount;
