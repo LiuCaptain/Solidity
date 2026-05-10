@@ -16,7 +16,7 @@ library TransferOperation {
         fb -= amount;
         tb += amount;
 
-        balanceOf[from] = fb; // 操作账本 
+        balanceOf[from] = fb; // 操作账本
         balanceOf[to] = tb;
     }
 }
