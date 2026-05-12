@@ -23,5 +23,5 @@ contract C is A {
 contract D is B, C {
     constructor () {}
 }
-// C3 线性化结果：A -> B -> C -> D
-// 所以上面多重合约继承中，构造函数执行顺序也是 A -> B -> C -> D，最后 x 为 75
+// C3 线性化序列结果：A -> B -> C -> D
+// 上面多重合约继承中，构造函数执行顺序也是 A -> B -> C -> D，最后 x 为 75
